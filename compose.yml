@@ -12,9 +12,6 @@ services:
     networks:
       - my-net
 
-    volumes:
-      - db-data:/var/lib/mysql
-
     deploy:
       replicas: 1
 
@@ -31,8 +28,7 @@ services:
     depends_on:
       - devopsdb
 
-    volumes:
-      - app-data:/usr/local/tomcat/logs
+   
 
     deploy:
       replicas: 3
@@ -44,8 +40,4 @@ networks:
 
   
 
-volumes:
 
-  db-data:
-
-  app-data:
