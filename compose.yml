@@ -63,7 +63,7 @@ services:
 
 networks:
 
-  db-net:
+  my-net:
     driver: overlay
 
   
