@@ -4,7 +4,7 @@ version: "3.8"
 services:
 
   devopsdb:
-    image: ashraysambu/devops:db
+    image: ashraysambu/sam:db
 
     ports:
       - "3333:3306"
@@ -31,7 +31,7 @@ services:
         condition: on-failure
 
   application:
-    image: ashraysambu/devops:app
+    image: ashraysambu/sam:app
 
     ports:
       - "1234:8080"
@@ -47,7 +47,7 @@ services:
       - app-data:/usr/local/tomcat/logs
 
     deploy:
-      replicas: 2
+      replicas: 4
 
       resources:
         limits:
