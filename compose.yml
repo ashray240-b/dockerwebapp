@@ -7,7 +7,7 @@ services:
     image: ashraysambu/devops:db
 
     ports:
-      - "2222:3306"
+      - "3333:3306"
 
     networks:
       - db-net
