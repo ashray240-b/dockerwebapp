@@ -18,18 +18,6 @@ services:
     deploy:
       replicas: 1
 
-      resources:
-        limits:
-          cpus: "0.50"
-          memory: 512M
-
-        reservations:
-          cpus: "0.25"
-          memory: 256M
-
-      restart_policy:
-        condition: on-failure
-
   application:
     image: ashraysambu/sam:app
 
@@ -47,19 +35,7 @@ services:
       - app-data:/usr/local/tomcat/logs
 
     deploy:
-      replicas: 4
-
-      resources:
-        limits:
-          cpus: "1.0"
-          memory: 1G
-
-        reservations:
-          cpus: "0.50"
-          memory: 512M
-
-      restart_policy:
-        condition: on-failure
+      replicas: 3
 
 networks:
 
