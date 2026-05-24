@@ -1,5 +1,5 @@
 ---
-version: "3.8"
+version: "3.9"
 
 services:
 
@@ -7,10 +7,10 @@ services:
     image: ashraysambu/sam:db
 
     ports:
-      - "3333:3306"
+      - "1111:3306"
 
     networks:
-      - db-net
+      - my-net
 
     volumes:
       - db-data:/var/lib/mysql
@@ -37,8 +37,8 @@ services:
       - "1234:8080"
 
     networks:
-      - app-net
-      - db-net
+      - my-net
+      
 
     depends_on:
       - devopsdb
@@ -66,8 +66,7 @@ networks:
   db-net:
     driver: overlay
 
-  app-net:
-    driver: overlay
+  
 
 volumes:
 
